@@ -1,0 +1,21 @@
+server:
+  port: 8301
+  address: 127.0.0.1 #配置本服务绑定ip
+spring:
+  servlet:
+    multipart:
+      max-file-size: 500 #单位MB
+      max-request-size: 512
+logging:
+  file: ./logs/efs.log
+###########################efs配置###############################
+efs:
+  service-code: efs-1 #服务唯一标识，负载均衡时必须保持唯一
+  store:
+    disk-root-dir: C:/Users/huweijian/Desktop/rentHouse/ #文件存储根目录,需以分隔符结尾
+    access-root-dir: files #文件访问根映射路径，此处更改则返回的url会随之变化
+
+
+###########################swagger配置###############################
+swagger:
+  show: true #线上环境应该把接口文档关闭
